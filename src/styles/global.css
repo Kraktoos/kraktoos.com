@@ -9,7 +9,7 @@
 }
 
 :root {
-	--width: 42rem;
+	--width: 46rem;
 	--font-family: 'Inter', Verdana, sans-serif;
 	--font-scale: 1em;
 	--background-color: #fff;
@@ -36,8 +36,8 @@
 body {
 	font-family: var(--font-family);
 	font-size: var(--font-scale);
-	margin: auto;
-	padding: 1rem 1.2rem;
+	margin: 0 auto;
+	padding: 0 2rem;
 	max-width: var(--width);
 	text-align: left;
 	background-color: var(--background-color);
