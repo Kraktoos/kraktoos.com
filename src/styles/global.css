@@ -11,23 +11,24 @@
 :root {
 	--width: 46rem;
 	--font-family: 'Inter', Verdana, sans-serif;
+	--font-family-mono: 'JetBrains Mono', monospace;
 	--font-scale: 1em;
 	--background-color: #fff;
 	--heading-color: #222;
 	--text-color: #444;
 	--link-color: #3273dc;
-	--visited-color:  #8b6fcb;
+	--visited-color:  #7d5fc2;
 	--code-color: #222;
 	--blockquote-color: #222;
 }
 
 @media (prefers-color-scheme: dark) {
 	:root {
-			--background-color: #01242e;
+			--background-color: #202630;
 			--heading-color: #eee;
 			--text-color: #ddd;
-			--link-color: #8cc2dd;
-			--visited-color:  #8b6fcb;
+			--link-color: #4db5ff;
+			--visited-color:  #b39ceb;
 			--code-color: #ddd;
 			--blockquote-color: #ccc;
 	}
@@ -37,7 +38,7 @@ body {
 	font-family: var(--font-family);
 	font-size: var(--font-scale);
 	margin: 0 auto;
-	padding: 0 2rem;
+	padding: 0 1.5rem;
 	max-width: var(--width);
 	text-align: left;
 	background-color: var(--background-color);
@@ -61,7 +62,6 @@ a {
 a:hover {
 	text-decoration: underline; 
 }
-
 nav a {
 	margin-right: 8px;
 }
@@ -131,22 +131,4 @@ footer {
 	margin-block-start: 1em;
 	margin-block-end: 1em;
 	overflow-x: scroll;
-}
-
-/* blog post list */
-ul.blog-posts {
-	list-style-type: none;
-	padding: unset;
-}
-
-ul.blog-posts li {
-	display: flex;
-}
-
-ul.blog-posts li span {
-	flex: 0 0 130px;
-}
-
-ul.blog-posts li a:visited {
-	color: var(--visited-color);
 }

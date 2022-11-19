@@ -4,20 +4,26 @@ import { SITE_TITLE } from '../config';
 ---
 
 <header>
-	<h2>
-		{SITE_TITLE}
-	</h2>
 	<nav>
-		<HeaderLink href="/">Home</HeaderLink>
-		<HeaderLink href="/blog">Blog</HeaderLink>
-		<HeaderLink href="/about">About</HeaderLink>
-		<HeaderLink href="https://twitter.com/astrodotbuild" target="_blank">Twitter</HeaderLink>
-		<HeaderLink href="https://github.com/withastro/astro" target="_blank">GitHub</HeaderLink>
+		<div>
+			<HeaderLink href="/">Home</HeaderLink>
+			<HeaderLink href="/projects">Projects</HeaderLink>
+			<HeaderLink href="/blog">Blog</HeaderLink>
+		</div>
+		<div>
+			<HeaderLink href="https://twitter.com/kraktoos" target="_blank">Twitter</HeaderLink>
+			<HeaderLink href="https://github.com/kraktoos" target="_blank">GitHub</HeaderLink>
+		</div>
 	</nav>
 </header>
 <style>
 	header {
-		margin: 0em 0 2em;
+		margin: 3em 0;
+	}
+	nav {
+		display: flex;
+		flex-direction: row;
+		justify-content: space-between;
 	}
 	h2 {
 		margin: 0.5em 0;
