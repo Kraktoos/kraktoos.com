@@ -1,0 +1,20 @@
+[
+  {
+    "title": "Something Here",
+    "img": "/placeholder-hero.jpg",
+    "stack": ["HTML", "CSS", "JavaScript"],
+    "link": "https://github.com"
+  },
+  {
+    "title": "Something Else",
+    "img": "/placeholder-about.jpg",
+    "stack": ["HTML", "CSS", "JavaScript"],
+    "link": "https://github.com"
+  },
+  {
+    "title": "LOL",
+    "img": "/placeholder-hero.jpg",
+    "stack": ["HTML", "CSS", "JavaScript"],
+    "link": "https://github.com"
+  }
+]

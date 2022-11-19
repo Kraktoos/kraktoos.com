@@ -2,12 +2,21 @@
 import BaseHead from '../components/BaseHead.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+import Card from '../components/Card.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
 
-// Use Astro.glob() to fetch all posts, and then sort them by date.
-const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
-	(a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf()
-);
+export interface Props {
+  title: string
+  img: string
+  stack: string[]
+  link: string
+}
+
+const {title, img, stack, link} = Astro.props as Props;
+
+// make ../data/projects.json available to the component
+import projects from '../data/projects.json';
+
 ---
 
 <!DOCTYPE html>
@@ -15,21 +24,15 @@ const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
 	<head>
 		<BaseHead title={SITE_TITLE} description={SITE_DESCRIPTION} />
 		<style>
-			ul {
-				list-style-type: none;
-				padding: unset;
+			.projects-grid {
+				display: grid;
+				grid-template-columns: 1fr 1fr;
+				grid-gap: 1rem;
 			}
-			ul li {
-				display: flex;
-			}
-			ul li time {
-				flex: 0 0 130px;
-				font-style: italic;
-				color: #595959;
-			}
-
-			ul li a:visited {
-				color: var(--visited-color);
+			@media (max-width: 600px) {
+				.projects-grid {
+					grid-template-columns: 1fr;
+				}
 			}
 		</style>
 	</head>
@@ -37,22 +40,13 @@ const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
 		<Header />
 		<main>
 			<section>
-				<ul>
+				<div class="projects-grid">
 					{
-						posts.map((post) => (
-							<li>
-								<time datetime={post.frontmatter.pubDate}>
-									{new Date(post.frontmatter.pubDate).toLocaleDateString('en-us', {
-										year: 'numeric',
-										month: 'short',
-										day: 'numeric',
-									})}
-								</time>
-								<a href={post.url}>{post.frontmatter.title}</a>
-							</li>
+						projects.map((project: { title: string; img: string; stack: string[]; link: string}) => (
+							<Card title={project.title} img={project.img} stack={project.stack} link={project.link} />
 						))
 					}
-				</ul>
+				</div>
 			</section>
 		</main>
 		<Footer />
