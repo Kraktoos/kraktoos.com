@@ -5,7 +5,7 @@ import Footer from '../components/Footer.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
 
 // Use Astro.glob() to fetch all posts, and then sort them by date.
-const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
+const posts = (await Astro.glob('./blog/**/*.{md,mdx}')).sort(
 	(a, b) => new Date(b.frontmatter.pubDate).valueOf() - new Date(a.frontmatter.pubDate).valueOf()
 );
 ---
@@ -23,8 +23,8 @@ const posts = (await Astro.glob('./blog/*.{md,mdx}')).sort(
 				display: flex;
 			}
 			ul li time {
-				flex: 0 0 130px;
-				font-style: italic;
+				flex: 0 0 135px;
+				font-family: var(--font-family-mono);
 				color: #595959;
 			}
 
