@@ -13,18 +13,19 @@
 	--font-family: 'Inter', Verdana, sans-serif;
 	--font-family-mono: 'JetBrains Mono', monospace;
 	--font-scale: 1em;
+	
 	--background-color: #fff;
 	--heading-color: #222;
 	--text-color: #444;
-	--link-color: #3273dc;
-	--visited-color:  #7d5fc2;
+	--link-color: #3a6eaa;
+	--visited-color:  #6f4fb9;
 	--code-color: #222;
 	--blockquote-color: #222;
 }
 
 @media (prefers-color-scheme: dark) {
 	:root {
-			--background-color: #202630;
+			--background-color: #2b303e;
 			--heading-color: #eee;
 			--text-color: #ddd;
 			--link-color: #4db5ff;
@@ -51,6 +52,25 @@ body {
 h1, h2, h3, h4, h5, h6 {
 	font-family: var(--font-family);
 	color: var(--heading-color);
+}
+
+h1 {
+	font-size: 2.5rem;
+}
+h2 {
+	font-size: 2rem;
+}
+h3 {
+	font-size: 1.75rem;
+}
+h4 {
+	font-size: 1.5rem;
+}
+h5 {
+	font-size: 1.25rem;
+}
+h6 {
+	font-size: 1rem;
 }
 
 a {
