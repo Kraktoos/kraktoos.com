@@ -45,8 +45,12 @@ body {
 	background-color: var(--background-color);
 	word-wrap: break-word;
 	overflow-wrap: break-word;
-	line-height: 1.5;
+	line-height: 1.73;
 	color: var(--text-color);
+}
+
+p {
+	margin-bottom: 1.3rem;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -55,19 +59,19 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-	font-size: 2.5rem;
-}
-h2 {
 	font-size: 2rem;
 }
+h2 {
+	font-size: 1.3rem;
+}
 h3 {
-	font-size: 1.75rem;
+	font-size: 1.25rem;
 }
 h4 {
-	font-size: 1.5rem;
+	font-size: 1.2rem;
 }
 h5 {
-	font-size: 1.25rem;
+	font-size: 1.1rem;
 }
 h6 {
 	font-size: 1rem;

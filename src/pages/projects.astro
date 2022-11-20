@@ -6,13 +6,14 @@ import Card from '../components/Card.astro';
 import { SITE_TITLE, SITE_DESCRIPTION } from '../config';
 
 export interface Props {
-  title: string
-  img: string
-  stack: string[]
-  link: string
+  title: string;
+  img: string;
+  stack: string[];
+	description: string;
+  link: string;
 }
 
-const {title, img, stack, link} = Astro.props as Props;
+const {title, img, description, stack, link} = Astro.props as Props;
 
 // make ../data/projects.json available to the component
 import projects from '../data/projects.json';
@@ -27,9 +28,9 @@ import projects from '../data/projects.json';
 			.projects-grid {
 				display: grid;
 				grid-template-columns: 1fr 1fr;
-				grid-gap: 1rem;
+				grid-gap: 1.2rem;
 			}
-			@media (max-width: 600px) {
+			@media (max-width: 700px) {
 				.projects-grid {
 					grid-template-columns: 1fr;
 				}
@@ -42,8 +43,8 @@ import projects from '../data/projects.json';
 			<section>
 				<div class="projects-grid">
 					{
-						projects.map((project: { title: string; img: string; stack: string[]; link: string}) => (
-							<Card title={project.title} img={project.img} stack={project.stack} link={project.link} />
+						projects.map((project: { title: string; img: string; stack: string[]; description: string; link: string}) => (
+							<Card title={project.title} img={project.img} stack={project.stack} description={project.description} link={project.link} />
 						))
 					}
 				</div>

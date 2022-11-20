@@ -5,21 +5,25 @@ export interface Props {
 		title: string;
 		img: string;
     stack: string[];
+    description: string;
     link: string;
 	};
 }
 
-const { title, img, stack, link } = Astro.props;
+const { title, img, stack, description, link } = Astro.props;
 
 ---
 <a href={link}>
   <div class="card-container">
-    <img src={img} />
+    <div class="img-container">
+      <img src={img}/>
+      <p>{description}</p>
+    </div>
     <h1>{title}</h1>
     <ul>
       {stack.map((item: string) => (
         <li>{item}</li>
-      ))}
+        ))}
     </ul>
   </div>
 </a>
@@ -30,6 +34,26 @@ const { title, img, stack, link } = Astro.props;
   a:hover {
     text-decoration: none;
   }
+  p {
+    font-size: 1rem;
+    color: #fff;
+    line-height: 1.5rem;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90%;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+
+  }
+  .img-container {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+  }
   .card-container {
     display: flex;
     flex-direction: column;
@@ -37,21 +61,26 @@ const { title, img, stack, link } = Astro.props;
     height: 100%;
     border-radius: 0.9rem;
     border: 2px solid white;
-    transition: all 0.15s ease-in-out;
+    transition: all 0.1s ease-in-out;
     overflow: hidden;
   }
   .card-container:hover {
-    box-shadow: 0 0 0.35rem 0.1rem #ffffff;
+    transform: scale(1.02);
+    box-shadow: 0 0 10px 0 rgba(255, 255, 255, 0.2);
   }
   .card-container:hover img {
-    width: 100%;
-    height: 120%;
-    object-fit: cover;
+    opacity: 40%;
+    filter: blur(5px);
   }
-  img {
+  .card-container:hover p {
+    opacity: 100%;
+  }
+  .card-container img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    transition: all 0.1s ease-in;
+    opacity: 100%;
   }
   h1 {
     font-size: 1.3rem;

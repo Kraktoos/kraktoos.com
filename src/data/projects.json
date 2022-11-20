@@ -3,18 +3,42 @@
     "title": "Something Here",
     "img": "/placeholder-hero.jpg",
     "stack": ["HTML", "CSS", "JavaScript"],
+    "description": "A PKG description A PKG description A PKG description A PKG description A PKG description A PKG description A PKG description A PKG description",
     "link": "https://github.com"
   },
   {
-    "title": "Something Else",
-    "img": "/placeholder-about.jpg",
-    "stack": ["HTML", "CSS", "JavaScript"],
-    "link": "https://github.com"
-  },
-  {
-    "title": "LOL",
+    "title": "Something Here",
     "img": "/placeholder-hero.jpg",
     "stack": ["HTML", "CSS", "JavaScript"],
+    "description": "Just a short description about the project...",
+    "link": "https://github.com"
+  },
+  {
+    "title": "Something Here",
+    "img": "/placeholder-hero.jpg",
+    "stack": ["HTML", "CSS", "JavaScript"],
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam lacinia, nunc nisl aliquam nisl, eget aliquam nunc nisl sit amet lorem. Sed euismod, nunc ut aliquam lacinia, nunc nisl aliquam nisl, eget aliquam nunc nisl sit amet lorem.",
+    "link": "https://github.com"
+  },
+  {
+    "title": "Something Here",
+    "img": "/placeholder-hero.jpg",
+    "stack": ["HTML", "CSS", "JavaScript"],
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam lacinia, nunc nisl aliquam nisl, eget aliquam nunc nisl sit amet lorem. Sed euismod, nunc ut aliquam lacinia, nunc nisl aliquam nisl, eget aliquam nunc nisl sit amet lorem.",
+    "link": "https://github.com"
+  },
+  {
+    "title": "Something Here",
+    "img": "/placeholder-hero.jpg",
+    "stack": ["HTML", "CSS", "JavaScript"],
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam lacinia, nunc nisl aliquam nisl, eget aliquam nunc nisl sit amet lorem. Sed euismod, nunc ut aliquam lacinia, nunc nisl aliquam nisl, eget aliquam nunc nisl sit amet lorem.",
+    "link": "https://github.com"
+  },
+  {
+    "title": "Something Here",
+    "img": "/placeholder-hero.jpg",
+    "stack": ["HTML", "CSS", "JavaScript"],
+    "description": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed euismod, nunc ut aliquam lacinia, nunc nisl aliquam nisl, eget aliquam nunc nisl sit amet lorem. Sed euismod, nunc ut aliquam lacinia, nunc nisl aliquam nisl, eget aliquam nunc nisl sit amet lorem.",
     "link": "https://github.com"
   }
 ]
