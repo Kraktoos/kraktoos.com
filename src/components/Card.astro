@@ -1,16 +1,14 @@
 ---
 
 export interface Props {
-	content: {
-		title: string;
-		img: string;
-    stack: string[];
-    description: string;
-    link: string;
-	};
+  title: string;
+  img: string;
+  stack: string[];
+  description: string;
+  link: string;
 }
 
-const { title, img, stack, description, link } = Astro.props;
+const { title, img, stack, description, link } = Astro.props as Props;
 
 ---
 <a href={link}>
