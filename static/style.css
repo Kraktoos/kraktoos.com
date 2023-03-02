@@ -1,0 +1,75 @@
+body {
+  font-family: sans-serif;
+  background: #000000;
+  color: #ccc;
+  padding: 0 1.1em;
+}
+
+main {
+  max-width: 48rem;
+  margin: auto;
+}
+
+a {
+  color: #0f9fff;
+  text-decoration: none;
+}
+a:hover,
+a:active {
+  text-decoration: underline;
+}
+
+img {
+  max-width: 100%;
+}
+
+header h1 {
+  text-align: center;
+}
+
+footer {
+  text-align: center;
+  clear: both;
+}
+
+/* For TAGLIST.HTML */
+.taglist {
+  text-align: center;
+  clear: both;
+}
+
+/* For NEXTPREV.HTML */
+#nextprev {
+  /* The container for both the previous and next articles. */
+}
+#prevart {
+  float: left;
+  text-align: left;
+}
+#nextart {
+  float: right;
+  text-align: right;
+}
+#nextart,
+#prevart {
+  max-width: 33%;
+}
+
+.quote {
+  border-left: 2px solid #ccc;
+  margin: 1em 0;
+  padding: 0 1em;
+}
+
+.quote blockquote {
+  font-style: italic;
+  margin: 0;
+  padding: 0;
+}
+
+.quote figcaption {
+  color: #777;
+  font-size: 0.9em;
+  margin-top: 0.5em;
+  margin-left: 0.2em;
+}

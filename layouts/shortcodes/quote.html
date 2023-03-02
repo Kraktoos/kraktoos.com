@@ -1,0 +1,10 @@
+<figure class="quote">
+  <blockquote>
+    "{{ .Inner }}"
+  </blockquote>
+  {{ with .Get "author" }}
+  <figcaption>
+    {{ . }}
+  </figcaption>
+  {{ end }}
+</figure>

@@ -1,0 +1,5 @@
+<ul id="blog-posts">
+  {{ range .Site.RegularPages.ByDate.Reverse }}{{ if in .Params.tags "post" }}
+  <li><a href="{{ .Permalink }}">{{ .Title }}</a> - {{ .Summary }} {{ .Date.Format "January 2, 2006" }} {{ .Params.tags }}</li>
+  {{ end }}{{ end }}
+</ul>

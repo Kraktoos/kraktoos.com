@@ -1,0 +1,12 @@
+{{ $src := .Get "src" }}
+{{ $alt := .Get "alt" }}
+{{ $size := .Get "size" }}
+{{ if not $size }}
+    {{ $size = "x22" }}
+{{ end }}
+{{ with resources.Get (printf "images/logos/%s" $src) }}
+    {{ $resized := .Resize $size }}
+    {{ with $resized }}
+        <img src="{{ .RelPermalink }}" alt="{{ $alt }}" width="{{ .Width }}" height="{{ .Height }}" style="vertical-align: middle;">
+    {{ end }}
+{{ end }}

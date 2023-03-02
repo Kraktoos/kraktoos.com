@@ -1,0 +1,8 @@
+{{ define "title" -}}
+{{ .Title }}
+<!-- Hero Image of the blog post -->
+{{ with resources.Get (printf "images/%s" .Params.image) }}
+  {{ $image := .Fill "720x360" }}
+  <img src="{{ $image.RelPermalink | relURL }}" alt=.Title />
+  {{ end }}
+{{ end }}
