@@ -66,7 +66,7 @@ I haven't really been editing many videos but when I did, I used {{< logo src="v
 {{< logo src="bitwarden.png" alt="Bitwarden logo" >}} [Bitwarden](https://bitwarden.com/). It's free, open-source and, as of now (02/2023), trustworthy enough for me. I **have** used KeePass and other apps that support KeePass formats, and they're fine, but I need to access my passwords outside my main devices.
 
 ### Email
-{{< logo src="tutanota.png" alt="Tutanota logo">}} [Tutanota](https://tutanota.com/). Not very feature rich, but it's really cheap, end-to-end encrypted, green and has it's clients are open-source.
+{{< logo src="tutanota.png" alt="Tutanota logo">}} [Tutanota](https://tutanota.com/). Not very feature rich, but it's really cheap, end-to-end encrypted, green and has its clients open-source.
 
 ### VPS
 {{< logo src="hetzner.png" alt="Hetzner logo" >}} [Hetzner](https://www.hetzner.com/). It's where I'm hosting this website, a Minecraft server, and others. They're cheap, reliable and have a great support team.
