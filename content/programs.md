@@ -63,16 +63,16 @@ I haven't really been editing many videos but when I did, I used {{< logo src="v
 ## Online Services
 
 ### Password Manager
-{{< logo src="bitwarden.png" alt="Bitwarden logo" >}} [Bitwarden](https://bitwarden.com/). It's free, open-source and, as of now (02/2023), trustworthy enough for me. I **have** used KeePass and apps that support KeePass formats, and they're fine, but I need to access my passwords outside my main devices.
+{{< logo src="bitwarden.png" alt="Bitwarden logo" >}} [Bitwarden](https://bitwarden.com/). It's free, open-source and, as of now (02/2023), trustworthy enough for me. I **have** used KeePass and other apps that support KeePass formats, and they're fine, but I need to access my passwords outside my main devices.
 
 ### Email
 {{< logo src="tutanota.png" alt="Tutanota logo">}} [Tutanota](https://tutanota.com/). Not very feature rich, but it's really cheap, end-to-end encrypted, green and has it's clients are open-source.
 
 ### VPS
-{{< logo src="hetzner.png" alt="Hetzner logo" >}} [Hetzner](https://www.hetzner.com/). I've been using them for a while now and I've never had any issues with them. They're cheap, reliable and have a great support team.
-
-### DNS and Others
-{{< logo src="cloudflare.png" alt="Cloudflare logo" >}} [Cloudflare](https://www.cloudflare.com/). I've been using them for a while now and I've never had any issues with them. They're cheap, reliable and have a great support team.
+{{< logo src="hetzner.png" alt="Hetzner logo" >}} [Hetzner](https://www.hetzner.com/). It's where I'm hosting this website, a Minecraft server, and others. They're cheap, reliable and have a great support team.
 
 ### Domains
 {{< logo src="namecheap.png" alt="Namecheap logo" >}} [Namecheap](https://www.namecheap.com/). I've been using them for a while now and I've never had any issues with them. They're cheap, reliable and have a great support team.
+
+### Domain DNS
+{{< logo src="cloudflare.png" alt="Cloudflare logo" >}} [Cloudflare](https://www.cloudflare.com/). I've been using them for a while now and I've never had any issues with them. They're cheap, reliable and have a great support team.
