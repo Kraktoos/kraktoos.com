@@ -2,7 +2,7 @@ import { getHighlighter as getShikiHighlighter } from 'shiki';
 import { themes } from './shiki-themes.js';
 import { languages } from './shiki-languages.js';
 
-// Caches Promise<Highligher> for reuse when the same theme and langs are provided
+// Caches Promise<Highlighter> for reuse when the same theme and langs are provided
 const _resolvedHighlighters = new Map();
 
 /** @type {Promise<any>} */
@@ -15,12 +15,14 @@ function stringify(opts) {
 
 /**
  * @param {import('shiki').HighlighterOptions} opts
- * @returns {Promise<import('shiki').Highlighter>}
+ * @returns {Promise<import('shiki').HighlighterOptions>}
  */
-async function resolveHighlighter(opts) {
+export async function resolveHighlighterOptions(opts) {
 	const resolvedThemes = [];
 	if (opts.theme && opts.theme in themes) {
 		resolvedThemes.push(await themes[opts.theme]());
+	} else if (Object.keys(opts.theme).length) {
+		resolvedThemes.push(opts.theme);
 	}
 
 	let resolvedLanguages;
@@ -44,6 +46,16 @@ async function resolveHighlighter(opts) {
 
 	// Do not pass through the theme as that will attempt to load it, even if it's included in themes
 	delete highlighterOptions['theme'];
+
+	return highlighterOptions;
+}
+
+/**
+ * @param {import('shiki').HighlighterOptions} opts
+ * @returns {Promise<import('shiki').Highlighter>}
+ */
+async function resolveHighlighter(opts) {
+	const highlighterOptions = await resolveHighlighterOptions(opts);
 
 	// Start the async getHighlighter call and cache the Promise
 	const highlighter = getShikiHighlighter(highlighterOptions).then((hl) => {
