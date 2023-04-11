@@ -1,0 +1,19 @@
+---
+
+import { Image } from '@astrojs/image/components';
+
+export interface Props {
+  src: string;
+  alt: string;
+}
+
+const { src, alt } = Astro.props as Props;
+
+---
+<Image src={"/logos/" + src + ".png"} alt={alt} format="webp" width={44} height={44} fit="cover"></Image>
+
+<style>
+  img {
+    width: 22px;
+  }
+</style>

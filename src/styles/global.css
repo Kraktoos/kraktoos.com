@@ -1,4 +1,4 @@
-@font-face {
+/* @font-face {
   font-family: 'Inter';
   src:  url('/fonts/inter-latin-variable-wghtOnly-normal.woff2') format('woff2');
 }
@@ -6,11 +6,11 @@
 @font-face {
   font-family: 'JetBrains Mono';
   src:  url('/fonts/jetbrains-mono-latin-variable-wghtOnly-normal.woff2') format('woff2');
-}
+} */
 
 :root {
 	--width: 46rem;
-	--font-family: 'Inter', Verdana, sans-serif;
+	--font-family: 'Inter', Open Sans, Verdana, sans-serif;
 	--font-family-mono: 'JetBrains Mono', monospace;
 	--font-scale: 1em;
 	
