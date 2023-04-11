@@ -1,6 +1,5 @@
 ---
-
-import { Image } from '@astrojs/image/components';
+import { Image } from "@astrojs/image/components";
 
 export interface Props {
   src: string;
@@ -8,12 +7,15 @@ export interface Props {
 }
 
 const { src, alt } = Astro.props as Props;
-
 ---
-<Image src={"/logos/" + src + ".png"} alt={alt} format="webp" width={44} height={44} fit="cover"></Image>
+
+<Image src={"/logos/" + src + ".png"} alt={alt} format="webp" width={44} height={44} fit="cover" />
 
 <style>
   img {
     width: 22px;
+    margin: 0;
+    vertical-align: middle;
+    display: inline-block;
   }
 </style>

@@ -111,13 +111,13 @@ declare module 'astro:content' {
 
 	const entryMap: {
 		"blog": {
-"distro-to-start-with/index.md": {
-  id: "distro-to-start-with/index.md",
+"distro-to-start-with/index.mdx": {
+  id: "distro-to-start-with/index.mdx",
   slug: "distro-to-start-with",
   body: string,
   collection: "blog",
   data: InferEntrySchema<"blog">
-} & { render(): Render[".md"] },
+} & { render(): Render[".mdx"] },
 },
 
 	};
