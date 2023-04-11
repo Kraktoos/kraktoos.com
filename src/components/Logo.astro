@@ -9,13 +9,4 @@ export interface Props {
 const { src, alt } = Astro.props as Props;
 ---
 
-<Image src={"/logos/" + src + ".png"} alt={alt} format="webp" width={44} height={44} fit="cover" />
-
-<style>
-  img {
-    width: 22px;
-    margin: 0;
-    vertical-align: middle;
-    display: inline-block;
-  }
-</style>
+<Image src={"/logos/" + src + ".png"} alt={alt} format="webp" width={44} height={44} fit="cover" style={{ width: "22px", margin: "0", verticalAlign: "middle", display: "inline-block" }} />
