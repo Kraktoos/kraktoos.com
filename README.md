@@ -3,3 +3,6 @@
 
 ## Built with
 - Astro
+
+## Deployed using
+- Cloudflare Pages
