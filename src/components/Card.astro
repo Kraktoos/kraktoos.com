@@ -1,5 +1,4 @@
 ---
-
 export interface Props {
   title: string;
   img: string;
@@ -9,19 +8,17 @@ export interface Props {
 }
 
 const { title, img, stack, description, link } = Astro.props as Props;
-
 ---
-<a href={link}>
+
+<a href={link} class="project">
   <div class="card-container">
     <div class="img-container">
-      <img src={img}/>
+      <img src={img} />
       <p>{description}</p>
     </div>
     <h1>{title}</h1>
-    <ul>
-      {stack.map((item: string) => (
-        <li>{item}</li>
-        ))}
+    <ul class="stack">
+      {stack.map((item: string) => <li>{item}</li>)}
     </ul>
   </div>
 </a>
@@ -44,7 +41,6 @@ const { title, img, stack, description, link } = Astro.props as Props;
     text-align: center;
     opacity: 0;
     transition: opacity 0.25s ease;
-
   }
   .img-container {
     position: relative;
@@ -98,7 +94,7 @@ const { title, img, stack, description, link } = Astro.props as Props;
     margin: 0;
     list-style: none;
     gap: 0.5rem;
-    padding: 0 0 1rem 1rem;
+    padding: 0 0.5rem 1rem 0.5rem;
   }
   ul li {
     padding: 0.3rem 0.5rem;
@@ -120,6 +116,12 @@ const { title, img, stack, description, link } = Astro.props as Props;
     ul li {
       border: 2px solid #666;
       color: #eee;
+    }
+  }
+
+  @media (max-width: 620px) {
+    .stack {
+      justify-content: center;
     }
   }
 </style>
