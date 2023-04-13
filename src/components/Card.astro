@@ -34,13 +34,14 @@ const { title, img, stack, description, link } = Astro.props as Props;
     color: #000;
     line-height: 1.5rem;
     position: absolute;
-    top: 45%;
+    top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     width: 90%;
     text-align: center;
     opacity: 0;
     transition: opacity 0.25s ease;
+    margin: 0;
   }
   .img-container {
     position: relative;
@@ -87,14 +88,14 @@ const { title, img, stack, description, link } = Astro.props as Props;
     padding: 0.7rem 1rem;
     margin: 0;
   }
-  ul {
+  .stack {
     display: flex;
     flex-wrap: wrap;
     padding: 0;
     margin: 0;
     list-style: none;
     gap: 0.5rem;
-    padding: 0 0.5rem 1rem 0.5rem;
+    padding: 0 1rem 1rem 1rem;
   }
   ul li {
     padding: 0.3rem 0.5rem;
