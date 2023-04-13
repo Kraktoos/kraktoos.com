@@ -1,0 +1,44 @@
+---
+import Logo from "../components/Logo.astro";
+
+export interface Props {
+  crypto: string;
+  address: string;
+}
+
+const { crypto, address } = Astro.props as Props;
+
+let copyButtonClass = "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded";
+---
+
+<h3>
+  <Logo src={crypto.toLowerCase()} alt={crypto + " logo"} size={30} />
+  {" "}
+  {crypto}
+</h3>
+<div class="w-full mb-2">
+  <code style="font-size: 20px;">{address}</code>
+</div>
+<button data-crypto-button class={copyButtonClass} id={crypto + "-copy-button"}>Copy Address</button>
+<hr />
+
+<script>
+  const buttons = document.querySelectorAll("[data-crypto-button]");
+
+  buttons.forEach((button) => {
+    button.addEventListener("click", () => {
+      copyAddress(button);
+    });
+  });
+
+  const copyAddress = (button: Element) => {
+    navigator.clipboard.writeText(button.previousElementSibling!.textContent!.trim());
+    button.textContent = "Copied!";
+    button.className = "bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded";
+
+    setTimeout(() => {
+      button.textContent = "Copy Address";
+      button.className = "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded";
+    }, 900);
+  };
+</script>

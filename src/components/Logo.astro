@@ -4,9 +4,13 @@ import { Image } from "@astrojs/image/components";
 export interface Props {
   src: string;
   alt: string;
+  size?: number;
 }
 
-const { src, alt } = Astro.props as Props;
+let { src, alt, size } = Astro.props as Props;
+
+size = size || 22;
+const doubleSize = size * 2;
 ---
 
-<Image src={"/logos/" + src + ".png"} alt={alt} format="webp" width={44} height={44} fit="cover" style={{ width: "22px", margin: "0", verticalAlign: "middle", display: "inline-block" }} />
+<Image src={"/logos/" + src + ".png"} alt={alt} format="webp" width={doubleSize} height={doubleSize} fit="cover" style={{ width: size + "px", margin: "0", verticalAlign: "middle", display: "inline-block" }} />

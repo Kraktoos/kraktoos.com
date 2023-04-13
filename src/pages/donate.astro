@@ -1,0 +1,37 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Header from "../components/Header.astro";
+import Footer from "../components/Footer.astro";
+import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
+import Logo from "../components/Logo.astro";
+import CryptoWallet from "../components/CryptoWallet.astro";
+---
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <BaseHead title={"Donate"} description={SITE_DESCRIPTION} />
+    <style>
+      .wallet-address {
+        font-size: 1rem;
+        font-weight: 400;
+        color: #666;
+      }
+    </style>
+  </head>
+
+  <body>
+    <Header title={SITE_TITLE} />
+    <main class="w-full">
+      <h1>Donate</h1>
+      <h2>Crypto currencies</h2>
+      <br />
+      <CryptoWallet crypto="Bitcoin" address="bc1q4jxmqhqy0kr76676anfja9wzlsrtf53gc9rcq0" />
+      <CryptoWallet crypto="Monero" address="446EBwQ787pFax8X9yCQJLT9vSgSQvCMUW8bhMsbDsuf7wmsu9WRKuBKkFi9TPZtUyb3r8EbR2wh3ejTKonnwTFX9Yuze9k" />
+      <CryptoWallet crypto="Ethereum" address="0xffc7499210a306441cEC7C9e43d487D402482762" />
+      <CryptoWallet crypto="Litecoin" address="LP118ULEfYwxjtp5HUvySsA1z18Nn2e2UZ" />
+      <p>Want me to support more coins? Email me at <a href="mailto:hello@kraktoos.com">hello@kraktoos.com</a>.</p>
+    </main>
+    <Footer />
+  </body>
+</html>
