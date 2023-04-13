@@ -1,5 +1,6 @@
 ---
 import Logo from "../components/Logo.astro";
+import { Image } from "@astrojs/image/components";
 
 export interface Props {
   crypto: string;
@@ -14,8 +15,6 @@ let { crypto, symbol, address, qr } = Astro.props as Props;
 if (!qr) {
   qr = true;
 }
-
-let copyButtonClass = "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded";
 ---
 
 <h3>
@@ -27,12 +26,12 @@ let copyButtonClass = "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 p
   <code class="text-md sm:text-xl">{address}</code>
 </div>
 <div class="flex items-center gap-4">
-  <button data-crypto-button class={copyButtonClass} id={crypto + "-copy-button"}>Copy Address</button>
+  <button data-crypto-button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" id={crypto + "-copy-button"}>Copy {symbol} Address</button>
   {
     qr && (
       <>
-        <a class="cursor-pointer" href={`https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=${address}`} target="_blank">
-          <img src={`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${address}`} alt={crypto + " address"} class="w-11" />
+        <a class="cursor-pointer" href={`/qr/${crypto.toLowerCase()}.png`} target="_blank">
+          <Image src={`/qr/${crypto.toLowerCase()}.png`} alt={`${crypto} Wallet QR Code`} format="webp" width={43.68} height={43.68} style="width: 43.68px; height: 43.68px;" quality={0.0000001} />
         </a>
       </>
     )
@@ -50,13 +49,13 @@ let copyButtonClass = "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 p
   });
 
   const copyAddress = (button: Element) => {
-    console.log("teste");
     navigator.clipboard.writeText(button.parentElement!.previousElementSibling!.textContent!.trim());
+    const content = button.textContent;
     button.textContent = "Copied!";
     button.className = "bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded";
 
     setTimeout(() => {
-      button.textContent = "Copy Address";
+      button.textContent = content;
       button.className = "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded";
     }, 900);
   };
