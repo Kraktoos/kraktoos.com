@@ -3,10 +3,17 @@ import Logo from "../components/Logo.astro";
 
 export interface Props {
   crypto: string;
+  symbol: string;
   address: string;
+  // make qr a boolean optional and true by default
+  qr?: boolean;
 }
 
-const { crypto, address } = Astro.props as Props;
+let { crypto, symbol, address, qr } = Astro.props as Props;
+
+if (!qr) {
+  qr = true;
+}
 
 let copyButtonClass = "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded";
 ---
@@ -17,9 +24,20 @@ let copyButtonClass = "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 p
   {crypto}
 </h3>
 <div class="w-full mb-2">
-  <code style="font-size: 20px;">{address}</code>
+  <code class="text-md sm:text-xl">{address}</code>
 </div>
-<button data-crypto-button class={copyButtonClass} id={crypto + "-copy-button"}>Copy Address</button>
+<div class="flex items-center gap-4">
+  <button data-crypto-button class={copyButtonClass} id={crypto + "-copy-button"}>Copy Address</button>
+  {
+    qr && (
+      <>
+        <a class="cursor-pointer" href={`https://api.qrserver.com/v1/create-qr-code/?size=500x500&data=${address}`} target="_blank">
+          <img src={`https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=${address}`} alt={crypto + " address"} class="w-11" />
+        </a>
+      </>
+    )
+  }
+</div>
 <hr />
 
 <script>
@@ -32,7 +50,8 @@ let copyButtonClass = "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 p
   });
 
   const copyAddress = (button: Element) => {
-    navigator.clipboard.writeText(button.previousElementSibling!.textContent!.trim());
+    console.log("teste");
+    navigator.clipboard.writeText(button.parentElement!.previousElementSibling!.textContent!.trim());
     button.textContent = "Copied!";
     button.className = "bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded";
 
