@@ -1,4 +1,8 @@
-/* @font-face {
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
   font-family: "Inter";
   src: url("/fonts/inter-latin-variable-wghtOnly-normal.woff2") format("woff2");
 }
@@ -6,11 +10,11 @@
 @font-face {
   font-family: "JetBrains Mono";
   src: url("/fonts/jetbrains-mono-latin-variable-wghtOnly-normal.woff2") format("woff2");
-} */
+}
 
 :root {
   --width: 50rem;
-  --font-family: sans-serif;
+  --font-family: "Inter", sans-serif;
   --font-family-mono: "JetBrains Mono", monospace;
   --font-scale: 1em;
 
