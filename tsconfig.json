@@ -3,4 +3,8 @@
   "include": [
     "data/**/*",
   ],
+  "compilerOptions": {
+    "strictNullChecks": true,
+    "allowJs": true
+  }
 }
