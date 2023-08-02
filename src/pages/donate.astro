@@ -22,22 +22,65 @@ import CryptoWallet from "../components/CryptoWallet.astro";
 
   <body>
     <Header title={SITE_TITLE} />
-    <main class="w-full">
+    <main style="width: 100%">
       <h1>Donate</h1>
-      <p>Thank you for your interest in supporting my work. I'm currently accepting donations in the following payment methods:</p>
+      <p>
+        Thank you for your interest in supporting my work. I'm currently
+        accepting donations in the following payment methods:
+      </p>
       <h3>
         <Logo src="paypal" alt="PayPal logo" size={30} />
         {" "} PayPal
       </h3>
-      <div class="w-full mb-3"></div>
-      <a class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded hover:decoration-transparent inline-block mb-0" href="https://paypal.me/kraktoos" target="_blank">Donate with PayPal</a>
+      <div style="width: 100%; margin-bottom: 0.75rem"></div>
+      <a class="button" href="https://paypal.me/kraktoos" target="_blank"
+        >Donate with PayPal</a
+      >
       <hr />
-      <CryptoWallet crypto="Bitcoin" symbol="BTC" address="bc1q4jxmqhqy0kr76676anfja9wzlsrtf53gc9rcq0" />
-      <CryptoWallet crypto="Monero" symbol="XMR" address="446EBwQ787pFax8X9yCQJLT9vSgSQvCMUW8bhMsbDsuf7wmsu9WRKuBKkFi9TPZtUyb3r8EbR2wh3ejTKonnwTFX9Yuze9k" />
-      <CryptoWallet crypto="Ethereum" symbol="ETH" address="0xffc7499210a306441cEC7C9e43d487D402482762" />
-      <CryptoWallet crypto="Litecoin" symbol="LTC" address="LP118ULEfYwxjtp5HUvySsA1z18Nn2e2UZ" />
-      <p>Want me to support another payment method or crypto coin? Email me at <a href="mailto:hello@kraktoos.com">hello@kraktoos.com</a>.</p>
+      <CryptoWallet
+        crypto="Bitcoin"
+        symbol="BTC"
+        address="bc1q4jxmqhqy0kr76676anfja9wzlsrtf53gc9rcq0"
+      />
+      <CryptoWallet
+        crypto="Monero"
+        symbol="XMR"
+        address="446EBwQ787pFax8X9yCQJLT9vSgSQvCMUW8bhMsbDsuf7wmsu9WRKuBKkFi9TPZtUyb3r8EbR2wh3ejTKonnwTFX9Yuze9k"
+      />
+      <CryptoWallet
+        crypto="Ethereum"
+        symbol="ETH"
+        address="0xffc7499210a306441cEC7C9e43d487D402482762"
+      />
+      <CryptoWallet
+        crypto="Litecoin"
+        symbol="LTC"
+        address="LP118ULEfYwxjtp5HUvySsA1z18Nn2e2UZ"
+      />
+      <p>
+        Want me to support another payment method or crypto coin? Email me at <a
+          href="mailto:hello@kraktoos.com">hello@kraktoos.com</a
+        >.
+      </p>
     </main>
     <Footer />
+    <style>
+      .button {
+        background-color: #0070ba;
+        border: none;
+        color: white;
+        padding: 0.5rem 1rem;
+        text-align: center;
+        text-decoration: none !important;
+        display: inline-block;
+        font-size: 1rem;
+        margin: 0.5rem 0.25rem;
+        cursor: pointer;
+        border-radius: 0.25rem;
+      }
+      .button:hover {
+        background-color: #005ea1;
+      }
+    </style>
   </body>
 </html>

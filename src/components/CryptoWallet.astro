@@ -22,22 +22,69 @@ if (!qr) {
   {" "}
   {crypto}
 </h3>
-<div class="w-full mb-2">
-  <code class="text-md sm:text-xl">{address}</code>
+<div style="width: 100%; margin-bottom: 0.5rem">
+  <code class="good-text">{address}</code>
 </div>
-<div class="flex items-center gap-4">
-  <button data-crypto-button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" id={crypto + "-copy-button"}>Copy {symbol} address</button>
+<div class="flex-container">
+  <button data-crypto-button class="button" id={crypto + "-copy-button"}
+    >Copy {symbol} address</button
+  >
   {
     qr && (
       <>
-        <a class="cursor-pointer" href={`/qr/${crypto.toLowerCase()}.png`} target="_blank">
-          <Image src={`/qr/${crypto.toLowerCase()}.png`} alt={`${crypto} Wallet QR Code`} format="webp" width={70} height={70} style="width: 43.68px; height: 43.68px;" quality={0.0000001} />
+        <a
+          href={`/qr/${crypto.toLowerCase()}.png`}
+          target="_blank"
+          style="width: 43.68px; height: 43.68px;"
+        >
+          <Image
+            src={`/qr/${crypto.toLowerCase()}.png`}
+            alt={`${crypto} Wallet QR Code`}
+            format="webp"
+            width={70}
+            height={70}
+            style="width: 43.68px; height: 43.68px;"
+            quality={0.0000001}
+          />
         </a>
       </>
     )
   }
 </div>
 <hr />
+
+<style>
+  .button {
+    background-color: #0070ba;
+    border: none;
+    color: white;
+    padding: 0.7rem 1rem;
+    text-align: center;
+    text-decoration: none !important;
+    font-size: 1rem;
+    cursor: pointer;
+    border-radius: 0.25rem;
+  }
+  .good-text {
+    font-size: 1.2rem;
+  }
+  @media screen and (max-width: 600px) {
+    .good-text {
+      font-size: 1rem;
+    }
+  }
+  .button:hover {
+    background-color: #005ea1;
+  }
+  .flex-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .green {
+    background-color: #3f9b42 !important;
+  }
+</style>
 
 <script>
   const buttons = document.querySelectorAll("[data-crypto-button]");
@@ -49,14 +96,16 @@ if (!qr) {
   });
 
   const copyAddress = (button: Element) => {
-    navigator.clipboard.writeText(button.parentElement!.previousElementSibling!.textContent!.trim());
+    navigator.clipboard.writeText(
+      button.parentElement!.previousElementSibling!.textContent!.trim()
+    );
     const content = button.textContent;
     button.textContent = "Copied!";
-    button.className = "bg-green-500 hover:bg-green-700 text-white font-bold py-2 px-4 rounded";
+    button.classList.add("green");
 
     setTimeout(() => {
       button.textContent = content;
-      button.className = "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded";
+      button.classList.remove("green");
     }, 900);
   };
 </script>
