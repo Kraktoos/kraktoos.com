@@ -4,7 +4,6 @@ import sitemap from "@astrojs/sitemap";
 import image from "@astrojs/image";
 import svelte from "@astrojs/svelte";
 import purgecss from "astro-purgecss";
-
 import compress from "astro-compress";
 
 // https://astro.build/config

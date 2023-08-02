@@ -1,6 +1,6 @@
-@tailwind base;
+/* @tailwind base;
 @tailwind components;
-@tailwind utilities;
+@tailwind utilities; */
 
 /* @font-face {
   font-family: "Inter";
@@ -55,8 +55,8 @@ body {
 
 ul {
   list-style: disc;
-  margin-left: 1.5rem;
-  margin-bottom: 1rem;
+  padding: 0;
+  margin: 0 0 1rem 1.8rem;
 }
 
 hr {
@@ -70,7 +70,7 @@ ol {
 }
 
 p {
-  margin-bottom: 1.3rem;
+  margin: 0.3rem 0 1.3rem 0;
 }
 
 h1,
@@ -81,7 +81,7 @@ h5,
 h6 {
   font-family: var(--font-family);
   color: var(--heading-color);
-  font-weight: 500;
+  margin: 0;
 }
 
 h1 {
@@ -151,7 +151,8 @@ img {
 }
 
 code {
-  font-family: "JetBrains Mono", Inconsolata, Monaco, Consolas, "Courier New", Courier, monospace;
+  font-family: "JetBrains Mono", Inconsolata, Monaco, Consolas, "Courier New",
+    Courier, monospace;
   padding: 2px;
   color: var(--code-color);
   border-radius: 3px;
@@ -160,13 +161,9 @@ code {
 blockquote {
   border-left: 1px solid #999;
   color: var(--code-color);
-  padding-left: 20px;
+  padding-left: 16px;
+  margin: 0;
   font-style: italic;
-}
-
-footer {
-  padding: 25px 0;
-  text-align: center;
 }
 
 .title:hover {
