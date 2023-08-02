@@ -13,7 +13,7 @@ const { title, img, stack, description, link } = Astro.props as Props;
 <a href={link} class="project">
   <div class="card-container">
     <div class="img-container">
-      <img src={img} />
+      <img src={img} alt={title} />
       <p>{description}</p>
     </div>
     <h1>{title}</h1>
