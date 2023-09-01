@@ -6,7 +6,11 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
 import { getCollection, getEntryBySlug } from "astro:content";
 
 // use getCollection to fetch all posts and sort them by date
-const posts = await getCollection("blog");
+const posts = await getCollection("blog").then((posts) =>
+  posts.sort((a, b) => {
+    return new Date(b.data.pubDate) - new Date(a.data.pubDate);
+  })
+);
 ---
 
 <!DOCTYPE html>
@@ -40,14 +44,14 @@ const posts = await getCollection("blog");
           {
             posts.map((post) => (
               <li>
-                <time datetime={post.data.pubDate}>
+                <time datetime={post.data.pubDate} transition:name={`blogpost-pubdate-${post.slug}`}>
                   {new Date(post.data.pubDate).toLocaleDateString("en-us", {
                     year: "numeric",
                     month: "short",
                     day: "numeric",
                   })}
                 </time>
-                <a href={"/posts/" + post.slug}>{post.data.title}</a>
+                <a href={"/posts/" + post.slug} transition:name={`blogpost-name-${post.slug}`}>{post.data.title}</a>
               </li>
             ))
           }

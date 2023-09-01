@@ -119,6 +119,7 @@ a {
   color: var(--link-color);
   cursor: pointer;
   text-decoration: none;
+  text-underline-offset: 3px;
 }
 
 a:hover {
