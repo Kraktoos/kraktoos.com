@@ -26,6 +26,9 @@ const { title, img, stack, description, link } = Astro.props as Props;
   a {
     text-decoration: none;
   }
+  a:hover::before {
+    width: 0;
+  }
   a:hover {
     text-decoration: none;
   }

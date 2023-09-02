@@ -84,6 +84,15 @@ if (!qr) {
   .green {
     background-color: #3f9b42 !important;
   }
+  a::before {
+    width: 0;
+  }
+  a {
+    transition: transform 0.1s ease-out;
+  }
+  a:hover {
+    transform: scale(1.06);
+  }
 </style>
 
 <script>
