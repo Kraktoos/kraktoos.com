@@ -3,6 +3,14 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
+import { getCollection } from "astro:content";
+import projects from "../data/projects.json";
+
+const posts = await getCollection("blog").then((posts) =>
+  posts.sort((a, b) => {
+    return new Date(b.data.pubDate).valueOf() - new Date(a.data.pubDate).valueOf();
+  })
+);
 ---
 
 <!DOCTYPE html>
@@ -14,26 +22,164 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../config";
     <Header title={SITE_TITLE} />
     <main>
       <h2>Hey! I'm Kraktoos 👋</h2>
-      <p>
-        I'm a Portuguese high school student and tech enthusiast currently studying at <a href="https://www.colgaia.pt">Colégio de Gaia</a> where I've been learning about general programming, OOP, databases, productivity apps and hardware.
-      </p>
-      <p>I'm into Tech, Programming, Linux, Free Software and Privacy and I'm currently learning about web development.</p>
-      <p>In the past, I've worked on a few projects, mainly in C# (mainly for school), Python, JavaScript and some other languages here and there.</p>
-      <p>
-        Check out the <a href="/uses">programs</a> I use, the <a href="/projects">projects</a> I've worked on and what I'm <a href="/now">doing now</a>.
-      </p>
-      <p>
-        If you want to support me, you can do so by <a href="/donate">donating</a>.
-      </p>
-      <h2>Contact</h2>
-      <p>
-        You can find me over on <a href="https://fosstodon.org/@kraktoos">Mastodon</a>, <a href="https://x.com/kraktoos">𝕏</a>, as well as on <a href="https://github.com/kraktoos">GitHub</a>, and in most other places of the internet
-        <em>@kraktoos</em>.
-      </p>
-      <p>
-        You can also email me at <a href="mailto:hello@kraktoos.com">hello@kraktoos.com</a>
-      </p>
+
+      <p>I'm a Portuguese dude that likes programming, Linux, FOSS, self-hosting, minimalism and privacy.</p>
+
+      <a href="/about">Learn more about me</a>, <a href="/now">see what I'm up to</a>, <a href="/uses">check what I use</a>, <a href="mailto:hello@kraktoos.com">email me</a> or <a href="/donate">support me</a>.
+
+      <h3>Projects</h3>
+      <ul>
+        {projects.map((project) => (
+          <li>
+            <time datetime={project.date}>
+              {new Date(project.date).toLocaleDateString("en-us", {
+                year: "numeric",
+                month: "short",
+                day: "numeric",
+              })}
+            </time>
+            <div class="popover__wrapper">
+              <a href={project.link} target="_blank">{project.title}</a>
+              <div class="popover__content">
+                <h2>{project.title}</h2>
+                <time datetime={project.date}>
+                  {new Date(project.date).toLocaleDateString("en-us", {
+                    year: "numeric",
+                    month: "short",
+                    day: "numeric",
+                  })}
+                </time>
+                <p>{project.description}</p>
+                {project.stack && (
+                  <ul class="stack">
+                    {project.stack.map((item) => (
+                      <li>{item}</li>
+                    ))}
+                  </ul>
+                )}
+                {project.img && (
+                  <img src={project.img} alt={project.title} />
+                )}
+              </div>
+            </div>
+          </li>
+        ))}
+      </ul>
+
+      <h3>Writings</h3>
+      <ul>
+        {
+          posts.map((post) => (
+            <li>
+              <time datetime={post.data.pubDate} transition:name={`blogpost-pubdate-${post.slug}`}>
+                {new Date(post.data.pubDate).toLocaleDateString("en-us", {
+                  year: "numeric",
+                  month: "short",
+                  day: "numeric",
+                })}
+              </time>
+              <a href={"/posts/" + post.slug} transition:name={`blogpost-name-${post.slug}`}>{post.data.title}</a>
+            </li>
+          ))
+        }
+      </ul>
     </main>
     <Footer />
   </body>
 </html>
+
+<style>
+  ul {
+    list-style-type: none;
+    padding: unset;
+    margin: 0;
+  }
+  ul li {
+    display: flex;
+  }
+  ul li time {
+    flex: 0 0 9.3rem;
+    font-family: var(--font-family-mono);
+    color: #595959;
+  }
+
+  ul li a:visited {
+    color: var(--visited-color);
+  }
+
+  li > a:hover::before {
+    content: "→";
+    width: 0;
+    bottom: 1.8rem;
+    left: -1.5rem;
+  }
+  li > a:hover::after {
+    content: "←";
+    margin-left: 0.5rem;
+  }
+
+  .popover__wrapper {
+    position: relative;
+    margin-top: 0;
+    display: inline-block;
+  }
+  .popover__content {
+    opacity: 0;
+    visibility: hidden;
+    position: absolute;
+    top: 4.2rem;
+    left: -7rem;
+    right: -7rem;
+    background-color: var(--background-color);
+    border-radius: 0.5rem;
+    padding: 1.2rem;
+    border: 1px solid #bfbfbf;
+    box-shadow: 0 1px 4px 0 var(--text-color);
+    width: auto;
+  }
+  .popover__content:before {
+    position: absolute;
+    z-index: -1;
+    content: "";
+    right: calc(50% - 10px);
+    top: -1rem;
+    border-style: solid;
+    border-width: 0 10px 10px 10px;
+    border-color: transparent transparent #bfbfbf transparent;
+    box-shadow: var(--background-color) 1px 1px 1px;
+    transition-duration: 0.3s;
+    transition-property: transform;
+  }
+  .popover__wrapper:hover .popover__content {
+    z-index: 10;
+    opacity: 1;
+    visibility: visible;
+    transform: translate(0, -20px);
+    transition: all 0.5s cubic-bezier(0.75, -0.02, 0.2, 0.97);
+  }
+  .stack {
+    margin: 0;
+    font-family: var(--font-family-mono);
+    display: flex;
+    flex-wrap: wrap;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    gap: 0.5rem;
+  }
+  .stack li {
+    padding: 0.3rem 0.5rem;
+    border-radius: 0.5rem;
+    border: 2px solid var(--text-color);
+    color: var(--text-color);
+    opacity: 0.8;
+  }
+  .popover__content h2 {
+    margin: 0;
+  }
+  .popover__content img {
+    margin-top: 1.2rem;
+    width: 100%;
+    border-radius: 0.5rem;
+  }
+</style>

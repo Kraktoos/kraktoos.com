@@ -2,15 +2,16 @@
 @tailwind components;
 @tailwind utilities; */
 
-/* @font-face {
+@font-face {
   font-family: "Inter";
   src: url("/fonts/inter-latin-variable-wghtOnly-normal.woff2") format("woff2");
 }
 
 @font-face {
   font-family: "JetBrains Mono";
-  src: url("/fonts/jetbrains-mono-latin-variable-wghtOnly-normal.woff2") format("woff2");
-} */
+  src: url("/fonts/jetbrains-mono-latin-variable-wghtOnly-normal.woff2")
+    format("woff2");
+}
 
 :root {
   --width: 50rem;
@@ -29,7 +30,7 @@
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --background-color: #111111;
+    --background-color: #111;
     --heading-color: #eee;
     --text-color: #ddd;
     --link-color: #4db5ff;
@@ -55,7 +56,7 @@ body {
   background-color: var(--background-color);
   word-wrap: break-word;
   overflow-wrap: break-word;
-  line-height: 1.73;
+  line-height: 1.68;
   color: var(--text-color);
 }
 
@@ -76,7 +77,7 @@ ol {
 }
 
 p {
-  margin: 0.3rem 0 1.3rem 0;
+  margin: 0.3rem 0 0.8rem 0;
 }
 
 h1,
@@ -87,7 +88,7 @@ h5,
 h6 {
   font-family: var(--font-family);
   color: var(--heading-color);
-  margin: 0;
+  margin: 0.8rem 0 0.6rem 0;
 }
 
 h1 {
@@ -126,7 +127,7 @@ a::before {
   content: "";
   position: absolute;
   left: 0;
-  bottom: -1px;
+  bottom: -3px;
   width: 0;
   height: 1px;
   background-color: var(--link-color);
@@ -154,12 +155,13 @@ b {
 }
 
 button {
+  font-family: var(--font-family);
   margin: 0;
   cursor: pointer;
 }
 
 content {
-  line-height: 1.6;
+  line-height: 1.55;
 }
 
 table {
