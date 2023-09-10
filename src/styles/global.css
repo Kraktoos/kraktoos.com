@@ -86,7 +86,6 @@ h3,
 h4,
 h5,
 h6 {
-  font-family: var(--font-family);
   color: var(--heading-color);
   margin: 0.8rem 0 0.6rem 0;
 }
