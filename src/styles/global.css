@@ -177,6 +177,23 @@ img {
   height: auto;
 }
 
+kbd {
+  font-family: var(--font-family-mono);
+  padding: 2px 5px;
+  border-radius: 3px;
+  background-color: #eee;
+  color: #444;
+  border: 1px solid #ccc;
+}
+
+@media (prefers-color-scheme: dark) {
+  kbd {
+    background-color: #333;
+    color: #ddd;
+    border: 1px solid #555;
+  }
+}
+
 code {
   font-family: "JetBrains Mono", Inconsolata, Monaco, Consolas, "Courier New",
     Courier, monospace;

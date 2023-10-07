@@ -8,9 +8,10 @@ const blogCollection = defineCollection({
     pubDate: z.string(),
     tags: z.array(z.string()),
     image: z.string().optional(),
+    katex: z.boolean().optional(),
   }),
 });
 
 export const collections = {
-  "blog": blogCollection,
+  blog: blogCollection,
 };
