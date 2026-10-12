@@ -2,65 +2,37 @@
 title: "3rd Place, CodeSpring 2026"
 issuer: "ISEP (Instituto Superior de Engenharia do Porto), sponsored by BLIP"
 date: "2026-05"
-tags:
-  [
-    "React Native",
-    "Expo",
-    "SQLite",
-    "SQLite FTS",
-    "sqlite-vec",
-    "SQLCipher",
-    "Offline-First",
-    "On-Device AI",
-    "Mobile",
-    "Hackathon",
-    "Zustand",
-    "llama.rn",
-    "MapLibre",
-  ]
+url: "https://ark.rgo.pt/"
+tags: ["React Native", "Expo", "SQLite", "Offline-First", "On-Device AI", "Hackathon"]
 logo: "isep"
 bullets:
-  - "In this 46-hour hackathon, we built Ark, an offline-first mobile survival app with maps, guides, wiki archives, weather caching, news, secure notes, and file management"
-  - "Implemented an on-device AI assistant using llama.rn, local embedding models, SQLite FTS, and sqlite-vec to retrieve relevant offline knowledge"
+  - "3rd place, CodeSpring 2026 at ISEP, a 46-hour hackathon sponsored by BLIP"
+  - "Built Ark, an offline-first mobile survival app with maps, a knowledge library, encrypted notes, and an on-device AI assistant"
 ---
 
 import CVImage from "../../components/features/cv/CVImage.astro";
+import CVImageGallery from "../../components/features/cv/CVImageGallery.astro";
 import Logo from "../../components/common/Logo.astro";
 import allWinners from "../../assets/cv/codespring-2026/all-winners.jpg";
 import thirdPlace from "../../assets/cv/codespring-2026/third-place.jpg";
 import pitching1 from "../../assets/cv/codespring-2026/pitching-1.jpg";
 import pitching2 from "../../assets/cv/codespring-2026/pitching-2.jpg";
 
-At my first hackathon, a 46-hour event sponsored by <Logo src="blip" />, my team built **Ark**, an offline-first mobile survival app. We placed **3rd** and later turned the prototype into an open-source project.
+At my first hackathon, my team built **Ark** with <Logo fixed src="expo" /> **React Native / Expo** and later released it as an open-source project.
 
-### What is Ark?
+Ark keeps downloaded maps, guides, wiki archives, and weather available without an internet connection. It also has encrypted notes, document storage, and device tools such as a compass and coordinates.
 
-**Ark** is designed for situations where internet access is unreliable or unavailable. It brings together offline maps, wiki archives, survival and health guides, cached weather forecasts, offline news, encrypted notes, file management, and practical device tools such as compass, coordinates, level, and emergency utilities.
+The AI assistant runs on the phone and searches local content using **llama.rn**, embedding models, **SQLite FTS**, and **sqlite-vec**. Maps use **MapLibre**, while **SQLCipher** protects private data.
 
-The app also includes an **offline AI assistant** that runs on the phone. It searches the user’s downloaded guides, notes, documents, maps, RSS items, cached weather, and wiki content to answer questions without sending that context to a server.
-
-### Tech stack
-
-- **Mobile**: <Logo fixed src="expo" /> **React Native / Expo**, **Expo Router**
-- **State**: <Logo fixed src="zustand" /> **Zustand**
-- **Offline Storage**: <Logo fixed src="sqlite" /> **SQLite**, **SQLite FTS**, **sqlite-vec**
-- **Security**: **SQLCipher**, **SecureStore**, **Local Authentication**
-- **AI**: **llama.rn**, local GGUF chat models, local embedding models, RAG
-- **Maps**: **MapLibre React Native**, offline map regions
-- **Content**: offline guides, PDF/HTML readers, ZIM archive support, RSS feeds, and cached weather
-- **Device features**: Expo Sensors, Location, Battery, a native OCR module, and a native ZIM reader module
+[Explore Ark and its documentation](https://ark.rgo.pt/) or [view the source on GitHub](https://github.com/rodrgds/ark).
 
 ### What I learned
 
-This hackathon showed me how much I can build by focusing on one product for a short time. It also taught me that a polished core flow and a clear pitch usually matter more than building every possible feature.
+We spent too much time debugging edge cases that judges never saw. Next time, I would polish the core flow and demo earlier, then expand the feature set.
 
-Ark was technically ambitious and already useful by the end, but we spent too much time debugging edge cases and implementation details that judges never saw. For future hackathons, I would prioritize the strongest happy path first, polish the demo earlier, and only then expand the feature set.
-
-Ark is now open source at [github.com/rodrgds/ark](https://github.com/rodrgds/ark).
-
-<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 16px;">
+<CVImageGallery>
   <CVImage src={thirdPlace} alt="3rd Place Award at CodeSpring 2026" />
   <CVImage src={allWinners} alt="All Winners and Finalists at CodeSpring 2026" />
   <CVImage src={pitching1} alt="Presenting Ark at CodeSpring 2026" />
   <CVImage src={pitching2} alt="Ark pitch during CodeSpring 2026" />
-</div>
+</CVImageGallery>

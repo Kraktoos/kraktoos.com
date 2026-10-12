@@ -43,61 +43,67 @@ const compactProfile: CVProfile = {
   headline: "Software Engineer & Computer Engineering Student",
   identity: {
     pronouns: "",
-    location: "Porto, Portugal",
     githubDisplay: "GitHub",
     linkedinDisplay: "LinkedIn",
     personalSiteDisplay: "rgo.pt",
   },
   include: {
     education: ["feup", "colegio-gaia"],
-    experience: ["acm-feup", "necho", "unis-easy", "dias-solutions"],
+    experience: ["feup-tutor", "necho", "unis-easy"],
     projects: [
       "openpost",
+      "montra",
       "shift-work-app",
       "the-actual-world",
       "youtube-channel",
     ],
     certifications: ["ef-set"],
-    honors: ["tecla-2024", "tecla-2023"],
+    honors: ["codespring-2026", "tecla-2024", "tecla-2023"],
   },
   sectionOrder: ["education", "honors", "experience", "projects", "skills"],
   sectionTitles: {
-    experience: "Selected Experience & Leadership",
+    experience: "Selected Experience",
     projects: "Selected Projects",
   },
   overrides: {
     "education/feup": [
       "Coursework: Algorithms & Data Structures, Operating Systems, Databases, Computer Architecture",
-      "Academic Tutor at Consultório FEUP; produce Portuguese CS/math educational videos for FEUP peers",
     ],
-    "education/colegio-gaia": ["Final grade: 19.9/20, top of class"],
-    "experience/acm-feup": [
-      "Lead a 10+ member team building AI projects and technical workshops; manage infrastructure and roadmap",
+    "education/colegio-gaia": [
+      "Final grade: 19.9/20, top of class",
+      "Self-taught programming during high school",
     ],
     "experience/unis-easy": [
-      "Solo-built an AI-powered study platform from product design to production infrastructure",
-      "Implemented course workspaces, materials, notes, AI+RAG chat, exercise solutions, billing, and usage limits",
-      "Grew @studywithrocco organically on TikTok to 1,000 followers and 500,000 views through study-tip content",
+      "Solo-built and deployed an AI study platform with course workspaces, notes, RAG chat, exercise solutions, and billing",
+      "Grew @studywithrocco on TikTok to 1,000 followers and 500,000 views through study tips",
     ],
-    "experience/dias-solutions": [
-      "Build client web apps and infrastructure: Linux servers, CI/CD, Docker, Cloudflare, backups, and disaster-recovery flows",
+    "experience/feup-tutor": [
+      "Tutored first- and second-year engineering students in mathematics, physics, and programming during weekly office hours",
+    ],
+    "projects/montra": [
+      "Building fashion search by text, product link, and image across regional stores, with PostgreSQL, Meilisearch, and CLIP",
+      "Built retailer ingestion, image processing, and pgvector similarity, with deterministic ranking and source-health monitoring",
     ],
     "projects/openpost": [
-      "Built a self-hosted social media scheduler as a single Go binary with embedded SvelteKit UI and SQLite storage",
-      "Used agentic coding to ship five-platform publishing, media management, job queues, and multi-tenant RBAC",
+      "Built and grew an open-source content workspace to 500+ GitHub stars, using Go, SvelteKit, and SQLite",
+      "Shipped multi-platform publishing, scheduling, analytics, inbox, media management, and automated content workflows",
+      "Built browser-based image and video editors, plus API, SDK, CLI, MCP, and n8n automation with workspace-scoped access",
     ],
     "projects/shift-work-app": [
-      "Rebuilt the offline-first Android app Trabalho por Turnos into ENF., a companion for Portuguese nurses with scheduling, overtime/night-shift pay logic, municipal holidays, monthly reports, and optional cloud backup and sync",
+      "Built ENF., an offline-first Android app for nurses with schedules, pay calculations, holidays, reports, and cloud sync",
     ],
     "projects/the-actual-world": [
-      "Built a high-school capstone with Expo/React Native, private posts, maps, real-time chat, Stripe credits, push notifications, and PHP/MySQL admin tooling",
+      "Built an Expo/React Native social app with maps, live chat, Stripe credits, push notifications, and PHP/MySQL admin tools",
     ],
     "projects/youtube-channel": [
       "Published 15+ Portuguese CS/math explainers for FEUP peers, reaching 8,000+ views across 10+ hours of content",
     ],
     "experience/necho": [
-      "Built core features for Cybersecure.pt, a cybersecurity SaaS for Portuguese SMEs: real-time dashboards, assessment workflows, PDF reports, email delivery, RBAC, MFA/WebAuthn, and multi-tenant access control",
-      "Implemented authentication, payments, file storage, real-time updates, and admin workflows with Next.js, TypeScript, DrizzleORM, MariaDB, Express.js, Socket.io, Stripe, and AWS S3",
+      "Built Cybersecure.pt features for Portuguese SMEs: assessments, live dashboards, PDF reports, payments, and multi-tenant access control with MFA/WebAuthn",
+      "Used Next.js, TypeScript, DrizzleORM, MariaDB, Express.js, Socket.io, Stripe, and AWS S3",
+    ],
+    "honors/codespring-2026": [
+      "3rd place, CodeSpring 2026 at ISEP: built Ark, an offline survival app with on-device AI, in 46 hours",
     ],
   },
   skills: {
