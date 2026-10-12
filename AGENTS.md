@@ -83,9 +83,10 @@ shared component. When publishing UI work, repeat the important smoke checks on
 
 ## CV and content workflow
 
-The collections in `src/content/` are canonical. `/projects`, the CV list and
-timeline, `/now`, and the generated CV files derive from those collections, so
-content changes must be checked across their consumers.
+The collections in `src/content/` are canonical. The CV list and timeline,
+`/now`, and the generated CV files derive from those collections, so content
+changes must be checked across their consumers. `/cv` is the project portfolio;
+the former `/projects` page redirects there.
 
 - Verify dates, technology claims, links, and project status from the actual
   source repo, its history, and its docs; do not infer them from memory or a
@@ -96,7 +97,7 @@ content changes must be checked across their consumers.
 - Match the established project-entry structure. Do not publish a repository
   link for a private project.
 - After CV/content edits, check `/cv` Timeline and List, direct hash opening,
-  `/now` current-item derivation, `/projects`, and affected PDF endpoints. Keep
+  `/now` current-item derivation and affected PDF endpoints. Keep
   mobile timeline overflow inside `[data-timeline-scroller]`, never on the
   document.
 - Preserve old shared URLs. In particular, legacy `?view=icons` resolves to the
